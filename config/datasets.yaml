@@ -1,0 +1,134 @@
+# Dataset contract for current and future pipeline phases.
+# This file declares metadata only; ingestion and transformations are not yet implemented.
+datasets:
+  customers:
+    dataset_name: customers
+    source:
+      path: data/demo/customers.csv
+      format: csv
+    primary_key:
+      - customer_id
+    required_columns:
+      - customer_id
+      - email
+      - signup_date
+      - updated_at
+    timestamp_column: updated_at
+    type_casts:
+      signup_date: timestamp
+      updated_at: timestamp
+    normalization:
+      lowercase_columns: [email]
+    deduplication:
+      columns:
+        - customer_id
+    partition_columns:
+      - signup_date
+    incremental:
+      enabled: true
+      column: updated_at
+    output:
+      table_name: bronze_customers
+  products:
+    dataset_name: products
+    source:
+      path: data/demo/products.json
+      format: json
+    primary_key: [product_id]
+    required_columns: [product_id, product_name, category, price, updated_at]
+    timestamp_column: updated_at
+    type_casts:
+      price: decimal(12,2)
+      created_at: timestamp
+      updated_at: timestamp
+    quality_rules:
+      - name: non_negative_price
+        column: price
+        operator: greater_than_or_equal
+        value: 0
+    deduplication:
+      columns: [product_id]
+    partition_columns: [created_at]
+    incremental:
+      enabled: true
+      column: updated_at
+    output:
+      table_name: bronze_products
+  orders:
+    dataset_name: orders
+    source:
+      path: data/demo/orders.csv
+      format: csv
+    primary_key: [order_id]
+    required_columns: [order_id, customer_id, order_timestamp, order_total, updated_at]
+    timestamp_column: updated_at
+    type_casts:
+      order_timestamp: timestamp
+      order_total: decimal(12,2)
+      updated_at: timestamp
+    quality_rules:
+      - name: non_negative_order_total
+        column: order_total
+        operator: greater_than_or_equal
+        value: 0
+    deduplication:
+      columns: [order_id]
+    partition_columns: [order_timestamp]
+    incremental:
+      enabled: true
+      column: updated_at
+    output:
+      table_name: bronze_orders
+  order_items:
+    dataset_name: order_items
+    source:
+      path: data/demo/order_items.csv
+      format: csv
+    primary_key: [order_item_id]
+    required_columns: [order_item_id, order_id, product_id, quantity, unit_price, line_total]
+    timestamp_column: null
+    type_casts:
+      quantity: integer
+      unit_price: decimal(12,2)
+      line_total: decimal(12,2)
+    quality_rules:
+      - name: positive_quantity
+        column: quantity
+        operator: greater_than
+        value: 0
+      - name: non_negative_line_total
+        column: line_total
+        operator: greater_than_or_equal
+        value: 0
+    deduplication:
+      columns: [order_item_id]
+    partition_columns: []
+    incremental:
+      enabled: false
+      column: null
+    output:
+      table_name: bronze_order_items
+  payments:
+    dataset_name: payments
+    source:
+      path: data/demo/payments.csv
+      format: csv
+    primary_key: [payment_id]
+    required_columns: [payment_id, order_id, payment_method, payment_status, amount]
+    timestamp_column: payment_timestamp
+    type_casts:
+      amount: decimal(12,2)
+      payment_timestamp: timestamp
+    quality_rules:
+      - name: non_negative_payment_amount
+        column: amount
+        operator: greater_than_or_equal
+        value: 0
+    deduplication:
+      columns: [payment_id]
+    partition_columns: [payment_timestamp]
+    incremental:
+      enabled: false
+      column: null
+    output:
+      table_name: bronze_payments

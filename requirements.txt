@@ -1,0 +1,10 @@
+# Foundation dependencies. Spark/Delta are declared now for compatibility with
+# subsequent phases but are not used by the Phase 1 implementation.
+pyspark>=3.5,<4.0
+delta-spark>=3.1,<4.0
+pandas>=2.0,<3.0
+pyarrow>=14.0,<20.0
+PyYAML>=6.0,<7.0
+Faker>=20.0,<40.0
+pytest>=8.0,<9.0
+streamlit>=1.35,<2.0

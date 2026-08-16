@@ -1,0 +1,28 @@
+# Example self-service dataset contract. It is accepted by the same pipeline
+# engine used by the CLI; a future Streamlit control plane will create this shape.
+dataset:
+  name: customers
+
+source:
+  path: data/demo/customers.csv
+  format: csv
+
+primary_key:
+  - customer_id
+
+required_columns:
+  - customer_id
+  - email
+
+deduplication:
+  columns:
+    - customer_id
+
+incremental:
+  enabled: true
+  column: updated_at
+
+quality_rules: []
+
+output:
+  table: customers

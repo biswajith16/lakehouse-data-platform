@@ -1,0 +1,49 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+build/
+dist/
+*.egg-info/
+
+# Environments and secrets
+.venv/
+venv/
+env/
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Data: retain empty directories, never commit generated or private data
+data/demo/*
+data/input/*
+data/bronze/*
+data/silver/*
+data/gold/*
+data/quarantine/*
+data/metadata/*
+!data/**/.gitkeep
+
+# Spark and Delta Lake runtime artifacts
+spark-warehouse/
+metastore_db/
+derby.log
+*.delta/
+_delta_log/
+
+# Application runtime files
+logs/
+*.log
+
+# OS and editor files
+.DS_Store
+.idea/
+.vscode/
+*.swp

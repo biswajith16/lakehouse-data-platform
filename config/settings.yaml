@@ -1,0 +1,29 @@
+# Global settings shared by all pipeline modes.
+pipeline:
+  mode: demo # Planned supported values: demo, user
+
+environment: local
+
+paths:
+  demo: data/demo
+  input: data/input
+  bronze: data/bronze
+  silver: data/silver
+  gold: data/gold
+  quarantine: data/quarantine
+  metadata: data/metadata
+
+spark:
+  app_name: config-driven-lakehouse
+
+logging:
+  level: INFO
+
+metadata:
+  run_history_path: data/metadata/pipeline_runs.jsonl
+
+demo_data:
+  seed: 42
+  default_customers: 100
+  default_products: 50
+  default_orders: 300

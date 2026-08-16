@@ -1,0 +1,42 @@
+[
+  {
+    "category": "Electronics",
+    "created_at": "2025-01-02T12:31:22",
+    "price": "193.06",
+    "product_id": "P000001",
+    "product_name": "BurlyWood Traditional 1",
+    "updated_at": "2025-09-10T09:37:51"
+  },
+  {
+    "category": "Electronics",
+    "created_at": "2025-07-03T04:32:41",
+    "price": "366.22",
+    "product_id": "P000002",
+    "product_name": "DarkOliveGreen Claim 2",
+    "updated_at": "2025-01-22T02:52:08"
+  },
+  {
+    "category": "Sports",
+    "created_at": "2025-10-05T22:31:10",
+    "price": "150.12",
+    "product_id": "P000003",
+    "product_name": "DimGray Structure 3",
+    "updated_at": "2025-01-05T21:01:14"
+  },
+  {
+    "category": "Home",
+    "created_at": "2024-02-16T08:17:51",
+    "price": "353.76",
+    "product_id": "P000004",
+    "product_name": "Peru Pick 4",
+    "updated_at": "2024-10-23T02:54:18"
+  },
+  {
+    "category": "Home",
+    "created_at": "2025-01-24T10:07:14",
+    "price": "433.91",
+    "product_id": "P000005",
+    "product_name": "Coral Image 5",
+    "updated_at": "2025-04-09T23:08:40"
+  }
+]

@@ -1,0 +1,12 @@
+customer_id,first_name,last_name,email,city,state,country,signup_date,updated_at
+C000001,Danielle,Johnson,,New Roberttown,CO,US,2027-08-02T04:03:12,2024-01-26T10:00:48
+C000002,Jeffery,Wagner,invalid-email-1,Robinsonshire,KY,US,2025-05-16T08:07:36,2024-05-22T03:43:54
+C000003,Lisa,Smith,helenpeterson@example.org,Port Matthew,CO,US,2027-10-17T19:51:22,2024-03-30T21:29:57
+C000004,Noah,Howard,cassandra07@example.net,South Christianport,MP,US,2026-05-14T01:09:25,2024-01-31T03:24:40
+C000005,Courtney,Mcclure,barbara10@example.net,Port Keith,CO,US,2025-03-23T08:28:15,2025-06-01T21:55:07
+C000006,Melissa,Delacruz,oramirez@example.com,West Michael,TN,US,2024-02-24T20:26:03,2024-07-22T23:39:41
+C000007,Joseph,Zuniga,lynchgeorge@example.net,East Steven,KY,US,2027-12-07T19:50:26,2025-03-05T08:01:33
+C000008,Veronica,Bowman,gabriellecameron@example.org,Port Antonio,MD,US,2026-07-08T21:27:16,2024-10-11T00:14:11
+C000009,Richard,Jones,jason76@example.net,Thomasberg,IA,US,2024-11-22T15:23:12,2024-12-14T10:07:01
+C000010,Julie,Ryan,zhurst@example.com,East William,,US,2024-11-14T07:50:21,2024-12-10T03:43:16
+C000001,Danielle,Johnson,,New Roberttown,CO,US,2027-08-02T04:03:12,2024-01-26T10:00:48
